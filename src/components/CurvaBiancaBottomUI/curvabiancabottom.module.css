@@ -1,0 +1,11 @@
+.curva {
+    width: 100vw; 
+    height: 5vh;
+    background-color: rgb(231, 0, 0);
+    color: aqua;
+    border-bottom-left-radius: 55% 110%; 
+    border-bottom-right-radius: 55% 110%;
+    bottom: -32px;
+    position: relative;
+    /* margin-top:100px; */
+}
