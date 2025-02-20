@@ -30,14 +30,14 @@ export default function AboutMeUI() {
   }
 
   const skills:Skills[] = [
-    { src: "html5.png", alt: "img-html" },
-    { src: "css.png", alt: "img-css" },
-    { src: "bootstrap.png", alt: "img-bootstrap" },
-    { src: "tailwind.png", alt: "img-tailwind" },
-    { src: "js.png", alt: "img-js" },
-    { src: "react.png", alt: "img-react" },
-    { src: "git.png", alt: "img-git" },
-    { src: "node.png", alt: "img-node" },
+    { src: "/html5.png", alt: "img-html" },
+    { src: "/css.png", alt: "img-css" },
+    { src: "/bootstrap.png", alt: "img-bootstrap" },
+    { src: "/tailwind.png", alt: "img-tailwind" },
+    { src: "/js.png", alt: "img-js" },
+    { src: "/react.png", alt: "img-react" },
+    { src: "/git.png", alt: "img-git" },
+    { src: "/node.png", alt: "img-node" },
   ];
 
   interface Button {
@@ -51,22 +51,22 @@ export default function AboutMeUI() {
   const buttons:Button[] = [
     {
       id: 1,
-      icon: "skills.png",
-      iconBlack: "skillsB.png",
+      icon: "/skills.png",
+      iconBlack: "/skillsB.png",
       alt: "img-skills",
       title: "Tecnologie",
     },
     {
       id: 2,
-      icon: "certifications.png",
-      iconBlack: "certificationsB.png",
+      icon: "/certifications.png",
+      iconBlack: "/certificationsB.png",
       alt: "img-certifications",
       title: "Certificazione",
     },
     {
       id: 3,
-      icon: "experience.png",
-      iconBlack: "experienceB.png",
+      icon: "/experience.png",
+      iconBlack: "/experienceB.png",
       alt: "img-experience",
       title: "Professione",
     },
@@ -170,11 +170,15 @@ export default function AboutMeUI() {
                     src={btn.icon}
                     alt={btn.alt}
                     className="w-8 absolute transition-opacity duration-500 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                    width={32}
+                    height={32}
                   />
                   <Image
                     src={btn.iconBlack}
                     alt={btn.alt}
                     className="w-8 transition-opacity duration-500 opacity-0 group-hover:opacity-100 group-focus:opacity-100"
+                    width={32}
+                    height={32}
                   />
                   <p>{btn.title}</p>
                 </button>
@@ -209,6 +213,7 @@ export default function AboutMeUI() {
                       src={skill.src}
                       alt={skill.alt}
                       className="w-14 h-14 m-auto"
+                    
                       initial={{ scale: 1 }}
                       animate={{
                         x: isRightInView || isSkillsClicked ? 0 : 100,
@@ -237,9 +242,11 @@ export default function AboutMeUI() {
                   <div className="flex flex-col justify-between mt-auto h-full ">
                     <div className="flex justify-center pt-5">
                       <Image
-                        src="aulab.png"
+                        src="/aulab.png"
                         alt="logo-aulab"
                         className="w-32 h-auto"
+                        width={128}
+                        height={128}
                       />
                     </div>
 
@@ -309,9 +316,11 @@ export default function AboutMeUI() {
                 <div className="flex flex-col justify-between mt-auto h-full">
                   <div className="flex justify-center pt-5">
                     <Image
-                      src="kibernetes.png"
+                      src="/kibernetes.png"
                       alt="logo-aulab"
                       className="w-32 h-auto"
+                      width={128}
+                      height={128}
                     />
                   </div>
 

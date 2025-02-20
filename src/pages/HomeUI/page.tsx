@@ -74,9 +74,11 @@ export default function HomeUI() {
 
         <div className="flex justify-center items-center w-full md:w-1/2 p-4 mt-4 md:mt-0">
           <Image
-            src="sfondopc.png"
+            src="/sfondopc.png"
             alt="img-HomePage"
             className="w-full max-w-[600px] h-auto"
+            width={2400} 
+            height={2400} 
           />
         </div>
       </div>

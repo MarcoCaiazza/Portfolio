@@ -143,7 +143,10 @@ export default function ContactsUI() {
 
         </div>
         <a href="#top" className="pt-10 animate-bounce">
-            <Image src="freccia.png" alt="image-to-Top" />
+            <Image src="/freccia.png" alt="image-to-Top" 
+                                width={32}
+                                height={32}
+            />
           </a>
       </div>
     </>

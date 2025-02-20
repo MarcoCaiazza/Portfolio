@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 
+
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [activeLink, setActiveLink] = useState<string>("#home");
@@ -44,7 +45,12 @@ export default function Navbar() {
           {/* <!-- Logo a sinistra --> */}
           <div className="flex flex-start pl-2 md:pl-0">
             {/* <a href="#">Logo</a> */}
-            <Image src="logoBianco.png" alt="logo" className="w-16 h-16" />
+            <Image src="/logoBianco.png" 
+            alt="logo" 
+            className="w-16 h-16"
+            width={64} 
+            height={64}  
+            />
           </div>
 
           {/* <!-- Menu --> */}
@@ -114,9 +120,11 @@ export default function Navbar() {
           <div className="border-b-2 border-gray-500 w-full box-border flex justify-center p-2">
             <a href="https://github.com/MarcoCaiazza" target="blank">
               <Image
-                src="githubWhite.png"
+                src="/githubWhite.png"
                 alt="icons-github"
                 className="w-10 h-10"
+                width={40} 
+                height={40} 
               />
             </a>
             <a
@@ -124,9 +132,11 @@ export default function Navbar() {
               target="blank"
             >
               <Image
-                src="linkedinWhite.png"
+                src="/linkedinWhite.png"
                 alt="icons-linkedin"
                 className="w-10 h-10"
+                width={40} 
+                height={40} 
               />
             </a>
           </div>

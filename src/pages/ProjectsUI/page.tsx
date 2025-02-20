@@ -30,7 +30,7 @@ export default function ProjectsUI() {
   const projects:Project[] = [
     {
       id: 1,
-      img: "calcolatrice.png",
+      img: "/calcolatrice.png",
       alt: "img-calculator",
       title: "Calcolatrice",
       description:
@@ -40,7 +40,7 @@ export default function ProjectsUI() {
     },
     {
       id: 2,
-      img: "appmeteo.png",
+      img: "/appmeteo.png",
       alt: "img-wheaterapp",
       title: "AppMeteo",
       description:
@@ -51,7 +51,7 @@ export default function ProjectsUI() {
 
     {
       id: 3,
-      img: "calcolatrice.png",
+      img: "/calcolatrice.png",
       alt: "img-calculator",
       title: "Games",
       description:
@@ -59,7 +59,7 @@ export default function ProjectsUI() {
     },
     {
       id: 4,
-      img: "bestmovies.png",
+      img: "/bestmovies.png",
       alt: "img-bestmovies",
       title: "BestMovies",
       description:
@@ -69,7 +69,7 @@ export default function ProjectsUI() {
     },
     {
       id: 5,
-      img: "appmeteo.png",
+      img: "/appmeteo.png",
       alt: "img-portfolio",
       title: "Portfolio",
       description:
@@ -137,6 +137,8 @@ export default function ProjectsUI() {
                   <Image
                     src={project.img}
                     alt={project.alt}
+                    width={2400}
+                    height={2400}
                     className="rounded-lg object-cover w-full h-[200px] transform transition-transform duration-500 ease-out hover:scale-110 cursor-pointer"
                     style={{
                       maskImage:
@@ -157,17 +159,21 @@ export default function ProjectsUI() {
                   <a href={project.github} target="blank">
                     {" "}
                     <Image
-                      src="githubblack.png"
+                      src="/githubblack.png"
                       alt="img-github"
                       className="block hover:scale-110 transition-transform duration-300"
+                      width={32}
+                      height={32}
                     />
                   </a>
                   <a href={project.repository} target="blank">
                     {" "}
                     <Image
-                      src="linkprogetto.png"
+                      src="/linkprogetto.png"
                       alt="img-link-progetto"
                       className="block hover:scale-110 transition-transform duration-300"
+                      width={32}
+                      height={32}
                     />
                   </a>
                 </div>
@@ -197,10 +203,12 @@ export default function ProjectsUI() {
                 transition={{ duration: 0.3 }}
               >
                 <div>
-                  <img
-                    src={projects.find((p) => p.id === imageClickedId)?.img}
-                    alt={projects.find((p) => p.id === imageClickedId)?.alt}
-                    className="rounded-lg object-cover w-auto h-auto cursor-pointer "
+                  <Image
+                    src={projects.find((p) => p.id === imageClickedId)?.img || "/fallback-image.jpg"}
+                    alt={projects.find((p) => p.id === imageClickedId)?.alt || "image-default"}
+                    className="rounded-lg object-cover w-auto h-auto cursor-pointer"
+                    width={2400}
+                    height={2400}
                     style={{
                       maskImage:
                         "linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0.1))",
