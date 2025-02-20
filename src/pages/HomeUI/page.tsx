@@ -66,7 +66,7 @@ export default function HomeUI() {
 
             <p className="text-white md:text-left mt-5 pl-1 text-sm md:text-base">
               Il mio obiettivo è sviluppare soluzioni moderne e performanti che
-              migliorino l'esperienza {`dell'utente`}, con un focus continuo sulla
+              migliorino {`l'esperienza`} {`dell'utente`}, con un focus continuo sulla
               qualità, {`l'efficienza`} e {`l'accessibilità`}.
             </p>
           </div>
