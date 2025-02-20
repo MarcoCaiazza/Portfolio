@@ -14,14 +14,14 @@ return (
 
             <a href="https://github.com/MarcoCaiazza" target="blank">
             <Image src="/githubWhite.png" alt="icons-github" className="w-10 h-10" 
-              width={64} 
-              height={64} 
+              width={40} 
+              height={40} 
             />
             </a>
             <a href="https://www.linkedin.com/in/marco-caiazza-8898a3266/" target="blank">
             <Image src="/linkedinWhite.png" alt="icons-linkedin" className="w-10 h-10"
-                          width={40} 
-                          height={40} 
+            width={40} 
+            height={40} 
             />
             </a>
         </div>
