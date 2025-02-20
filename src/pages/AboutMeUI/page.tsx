@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -133,14 +133,13 @@ export default function AboutMeUI() {
             </p>
             <p className="pt-3 text-center sm:text-left">
               Nel tempo libero, mi piace allenarmi (o almeno ci provo!), in
-              particolare all'aria aperta. <br /> Dopo ogni sessione, mi concedo
+              particolare {`all'aria`} aperta. <br /> Dopo ogni sessione, mi concedo
               sempre un pò di stretching per rilassare corpo e mente, tutto
               questo, mentre ascolto della buona musica come il Pop Rock 🎵.
             </p>
             <p className="pt-3 text-center sm:text-left">
-              Inoltre, il mio hobby preferito è viaggiare: amo scoprire nuovi
-              luoghi culture (e assaggiare del buon cibo), sempre con la voglia
-              di esplorare il mondo ✈️.
+              Inoltre, il mio hobby preferito è viaggiare ✈️: amo scoprire nuovi
+              luoghi, immergermi in culture affascinanti e assaggiare del buon cibo locale.
             </p>
             </div>
           </div>
