@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { a } from "motion/react-client";
+import Image from "next/image";
+
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -43,7 +44,7 @@ export default function Navbar() {
           {/* <!-- Logo a sinistra --> */}
           <div className="flex flex-start pl-2 md:pl-0">
             {/* <a href="#">Logo</a> */}
-            <img src="logoBianco.png" alt="logo" className="w-16 h-16" />
+            <Image src="logoBianco.png" alt="logo" className="w-16 h-16" />
           </div>
 
           {/* <!-- Menu --> */}
@@ -112,7 +113,7 @@ export default function Navbar() {
 
           <div className="border-b-2 border-gray-500 w-full box-border flex justify-center p-2">
             <a href="https://github.com/MarcoCaiazza" target="blank">
-              <img
+              <Image
                 src="githubWhite.png"
                 alt="icons-github"
                 className="w-10 h-10"
@@ -122,7 +123,7 @@ export default function Navbar() {
               href="https://www.linkedin.com/in/marco-caiazza-8898a3266/"
               target="blank"
             >
-              <img
+              <Image
                 src="linkedinWhite.png"
                 alt="icons-linkedin"
                 className="w-10 h-10"

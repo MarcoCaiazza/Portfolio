@@ -1,6 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { useInView } from "react-intersection-observer";
+import Image from "next/image";
+
 
 export default function ProjectsUI() {
   const [imageClickedId, setImageClickedId] = useState<number>(0);
@@ -75,8 +77,7 @@ export default function ProjectsUI() {
     },
   ];
 
-  // const ref = useRef(null);
-  // const isInView = useInView(ref, { once: true });
+
 
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -133,7 +134,7 @@ export default function ProjectsUI() {
                 className="p-2 rounded-2xl flex flex-col shadow-[0px_0px_40px_rgba(200,200,200,1)] mt-5 sm:mt-0 hover:scale-105 transition-transform duration-300 items-center "
               >
                 <div className="relative overflow-hidden rounded-lg">
-                  <img
+                  <Image
                     src={project.img}
                     alt={project.alt}
                     className="rounded-lg object-cover w-full h-[200px] transform transition-transform duration-500 ease-out hover:scale-110 cursor-pointer"
@@ -155,7 +156,7 @@ export default function ProjectsUI() {
                 <div className="pt-3 pl-2 flex gap-3 mt-auto ">
                   <a href={project.github} target="blank">
                     {" "}
-                    <img
+                    <Image
                       src="githubblack.png"
                       alt="img-github"
                       className="block hover:scale-110 transition-transform duration-300"
@@ -163,7 +164,7 @@ export default function ProjectsUI() {
                   </a>
                   <a href={project.repository} target="blank">
                     {" "}
-                    <img
+                    <Image
                       src="linkprogetto.png"
                       alt="img-link-progetto"
                       className="block hover:scale-110 transition-transform duration-300"

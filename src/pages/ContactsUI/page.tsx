@@ -2,8 +2,9 @@ import emailjs from "emailjs-com";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { textarea } from "motion/react-client";
 import { Toaster, toast } from "sonner";
+import Image from "next/image";
+
 
 export default function ContactsUI() {
   const { ref, inView } = useInView({
@@ -142,7 +143,7 @@ export default function ContactsUI() {
 
         </div>
         <a href="#top" className="pt-10 animate-bounce">
-            <img src="freccia.png" alt="image-to-Top" />
+            <Image src="freccia.png" alt="image-to-Top" />
           </a>
       </div>
     </>

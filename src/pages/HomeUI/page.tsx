@@ -1,6 +1,8 @@
 import styles from "./homeUI.module.css";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Image from "next/image";
+
 
 export default function HomeUI() {
   const { ref, inView } = useInView({
@@ -64,14 +66,14 @@ export default function HomeUI() {
 
             <p className="text-white md:text-left mt-5 pl-1 text-sm md:text-base">
               Il mio obiettivo è sviluppare soluzioni moderne e performanti che
-              migliorino l'esperienza dell'utente, con un focus continuo sulla
-              qualità, l'efficienza e l'accessibilità.
+              migliorino l'esperienza {`dell'utente`}, con un focus continuo sulla
+              qualità, {`l'efficienza`} e {`l'accessibilità`}.
             </p>
           </div>
         </section>
 
         <div className="flex justify-center items-center w-full md:w-1/2 p-4 mt-4 md:mt-0">
-          <img
+          <Image
             src="sfondopc.png"
             alt="img-HomePage"
             className="w-full max-w-[600px] h-auto"
