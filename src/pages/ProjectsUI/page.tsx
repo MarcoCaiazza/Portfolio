@@ -3,19 +3,29 @@ import { useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
 export default function ProjectsUI() {
-  const [imageClickedId, setImageClickedId] = useState(0);
+  const [imageClickedId, setImageClickedId] = useState<number>(0);
   console.log(imageClickedId);
 
-  const showImageClicked = (id: any) => {
+  const showImageClicked = (id: number) => {
     setImageClickedId(id);
     console.log("l'immagine è stata cliccata?", imageClickedId);
   };
 
-  const closeImage = () => {
+  const closeImage = (): void => {
     setImageClickedId(0);
   };
 
-  const projects = [
+  interface Project {
+    id:number;
+    img:string;
+    alt: string;
+    title: string;
+    description: string;
+    github?: string;
+    repository?: string;
+  }
+
+  const projects:Project[] = [
     {
       id: 1,
       img: "calcolatrice.png",
@@ -75,11 +85,12 @@ export default function ProjectsUI() {
 
   return (
     <>
-      <div className="flex flex-col items-center " id="projects">
-        <div className="max-w-screen-lg border-b border-gray-900/20 pt-16 pb-20 ">
-          <div className="flex flex-col items-center justify-center max-w-screen-lg">
+      <div className="flex flex-col items-center">
+        <div className="text-transparent " id="projects">i miei progetti</div>
+        <div className="max-w-screen-lg border-b border-gray-900/20 pt-14 pb-20 w-[90%] md:w-auto">
+          <div className="flex flex-col items-center justify-center max-w-screen-lg ">
             <motion.h1
-              className="text-5xl"
+              className="md:text-5xl text-4xl font-medium md:font-normal"
               ref={ref}
               initial={{ opacity: 0 }}
               animate={{
@@ -90,7 +101,7 @@ export default function ProjectsUI() {
                 },
               }}
             >
-              {[..."My Projects"].map((char, index) => (
+              {[..."I miei progetti"].map((char, index) => (
                 <motion.span
                   key={index}
                   initial={{ opacity: 0, x: 20 }}
@@ -108,17 +119,18 @@ export default function ProjectsUI() {
                 </motion.span>
               ))}
             </motion.h1>
-            <p className="pt-3">Una raccolta di progetti su cui ho lavorato.</p>
+            <p className="pt-3 text-sm md:text-base">Una raccolta di progetti su cui ho lavorato.</p>
           </div>
 
+          {/* <motion.div className="sm:grid sm:grid-cols-3 mt-0 sm:mt-16 gap-10 bg-red-600 " */}
 
-          <motion.div className="sm:grid sm:grid-cols-3 mt-0 sm:mt-16 gap-10"
+          <motion.div className="flex flex-col md:grid md:grid-cols-3 md:mt-16 p-9 md:p-0 gap-20 md:gap-10"
 
           >
-            {projects.map((project) => (
+            {projects.map((project:Project) => (
               <motion.div
                 key={project.id}
-                className="p-2 rounded-2xl flex flex-col shadow-[0px_0px_40px_rgba(200,200,200,1)] mt-5 sm:mt-0 hover:scale-105 transition-transform duration-300 items-center"
+                className="p-2 rounded-2xl flex flex-col shadow-[0px_0px_40px_rgba(200,200,200,1)] mt-5 sm:mt-0 hover:scale-105 transition-transform duration-300 items-center "
               >
                 <div className="relative overflow-hidden rounded-lg">
                   <img
@@ -136,7 +148,7 @@ export default function ProjectsUI() {
                 </div>
 
                 <div className=" mt-10">
-                  <h1 className="font-semibold text-xl">{project.title}</h1>
+                  <h1 className="font-semibold text-xl ">{project.title}</h1>
                 </div>
 
                 {/* icone */}
@@ -197,7 +209,7 @@ export default function ProjectsUI() {
                     }}
                   />
                   <h1 className="font-semibold text-xl p-1 pt-2">{projects.find((p) => p.id === imageClickedId)?.title}</h1>
-                  <p className="p-1 font-light">
+                  <p className="p-1 font-light ">
                     {projects.find((p) => p.id === imageClickedId)?.description}
                   </p>
                 </div>

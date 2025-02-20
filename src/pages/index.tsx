@@ -7,6 +7,7 @@ import ProjectsUI from "./ProjectsUI/page";
 import CurvaBiancaBottomUI from "@/components/CurvaBiancaBottomUI/page";
 import CurvaBiancaUpUI from "@/components/CurvaBiancaUpUI/page";
 import ContactsUI from "@/pages/ContactsUI/page";
+import FooterUI from "@/components/FooterUI";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +28,7 @@ export default function Home() {
         <AboutMeUI />
         <ProjectsUI />
         <ContactsUI />
+        <FooterUI />
       </main>
   );
 }
