@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
@@ -7,6 +7,14 @@ import Image from "next/image";
 export default function AboutMeUI() {
   const [activeTab, setActiveTab] = useState<string>("skills");
   const [isSkillsClicked, setIsSkillsClicked] = useState<boolean>(false);
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  const [mobileInView, setMobileInView] = useState(isMobile);
+
+  useEffect(() => {
+    if(isMobile) {
+      setMobileInView(true)
+    }
+  },[isMobile])
 
 
   const { ref: leftRef, inView: isLeftInView } = useInView({
@@ -146,15 +154,19 @@ export default function AboutMeUI() {
             </div>
           </div>
 
-          <div className="w-full flex flex-col justify-evenly max-w-screen-lg mt-20 md:flex-row">
+          <div className="flex flex-col justify-evenly max-w-screen-lg mt-20 md:flex-row bg-blue-600">
             <motion.div
               ref={leftRef}
               className="flex flex-col gap-5 order-first md:order-none justify-between md:w-1/4 w-full"
-              initial={{ x: -200, opacity: 0 }}
-              animate={{
-                x: isLeftInView ? 0 : -200,
-                opacity: isLeftInView ? 1 : 0,
-              }}
+              initial={{ opacity: 0, transform: 'translateX(-200px)' }} // Modifica qui per il movimento
+          animate={isLeftInView ? { opacity: 1, transform: 'translateX(0)' } : { opacity: 0, transform: 'translateX(-200px)' }}
+              // initial={{ x: -200, opacity: 0 }}
+              // animate={{
+              //   x: isLeftInView ? 0 : -200,
+              //   opacity: isLeftInView ? 1 : 0,
+              // }}
+              // animate={isLeftInView ? { x: 0, opacity: 1 } : { x: -200, opacity: 0 }}
+              style={{ visibility: isLeftInView ? "visible" : "hidden" }}
               transition={{
                 duration: 0.8,
                 ease: "easeInOut",
@@ -187,12 +199,25 @@ export default function AboutMeUI() {
 
             <motion.div
               ref={rightRef}
-              className="gap-10 p-4 overflow-hidden w-3/4 sm:mx-0 mx-auto sm:mt-0 rounded-3xl shadow-[5px_0px_10px_5px_rgba(150,150,150,0.3)] w-full md:w-[400px] mt-10"
-              initial={{ x: 200, opacity: 0 }}
-              animate={{
-                x: isRightInView ? 0 : 200,
-                opacity: isRightInView ? 1 : 0,
-              }}
+              className="bg-purple-600 gap-10 p-4 overflow-hidden  rounded-3xl shadow-[5px_0px_10px_5px_rgba(150,150,150,0.3)] "
+              // initial={{ x: 200, opacity: 0, }}
+              // initial={{ opacity: 0, transform: 'translateX(-200px)' }}
+
+              // animate={{
+              //   x: isRightInView ? 0 : 200,
+              //   opacity: isRightInView ? 1 : 0,
+              // }}
+              initial={isMobile ? { y: 200, opacity: 0 } : { x: 200, opacity: 0 }}
+              animate={
+                isRightInView
+                  ? { y: 0, x: 0, opacity: 1 }
+                  : isMobile
+                  ? { y: 200, opacity: 0 }
+                  : { x: 200, opacity: 0 }
+              }
+              // animate={isRightInView ? { opacity: 1, transform: 'translateX(0)' } : { opacity: 0, transform: 'translateX(200px)' }}
+
+              // style={{ visibility: isRightInView ? "visible" : "hidden"}}
               transition={{
                 duration: 0.8,
                 ease: "easeInOut",
@@ -216,9 +241,9 @@ export default function AboutMeUI() {
                     
                       initial={{ scale: 1 }}
                       animate={{
-                        x: isRightInView || isSkillsClicked ? 0 : 100,
-                        scale:
-                          isRightInView || isSkillsClicked ? [1, 1.3, 1] : 1,
+                        x: isMobile ? 0 : isRightInView || isSkillsClicked ? 0 : 100,
+                        y: isMobile ? (isRightInView || isSkillsClicked ? 0 : 100) : 0,
+                        scale: isRightInView || isSkillsClicked ? [1, 1.3, 1] : 1,
                       }}
                       transition={{
                         duration: 1,

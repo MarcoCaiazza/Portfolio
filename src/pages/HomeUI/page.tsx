@@ -76,7 +76,8 @@ export default function HomeUI() {
           <Image
             src="/sfondopc.png"
             alt="img-HomePage"
-            className="w-full max-w-[600px] h-auto"
+            className="w-full max-w-[600px] h-auto object-cover"
+            priority
             width={2400} 
             height={2400} 
           />

@@ -6,11 +6,9 @@ import Image from "next/image";
 
 export default function ProjectsUI() {
   const [imageClickedId, setImageClickedId] = useState<number>(0);
-  console.log(imageClickedId);
 
   const showImageClicked = (id: number) => {
     setImageClickedId(id);
-    console.log("l'immagine è stata cliccata?", imageClickedId);
   };
 
   const closeImage = (): void => {
@@ -77,6 +75,7 @@ export default function ProjectsUI() {
     },
   ];
 
+  const selectedProject = projects.find((p) => p.id === imageClickedId);
 
 
   const { ref, inView } = useInView({
@@ -217,10 +216,16 @@ export default function ProjectsUI() {
                       //   "linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0))",
                     }}
                   />
-                  <h1 className="font-semibold text-xl p-1 pt-2">{projects.find((p) => p.id === imageClickedId)?.title}</h1>
+                  {selectedProject && (
+                    <div>
+                    <h1 className="font-semibold text-xl p-1 pt-2">{selectedProject.title}</h1>
+                    <p className="p-1 font-light">{selectedProject.description}</p>
+                    </div>
+                  )}
+                  {/* <h1 className="font-semibold text-xl p-1 pt-2">{projects.find((p) => p.id === imageClickedId)?.title}</h1>
                   <p className="p-1 font-light ">
-                    {projects.find((p) => p.id === imageClickedId)?.description}
-                  </p>
+                    {projects.find((p) => p.id === imageClickedId)?.description}@
+                  </p> */}
                 </div>
               </motion.div>
             </motion.div>
