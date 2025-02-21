@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
@@ -8,13 +8,13 @@ export default function AboutMeUI() {
   const [activeTab, setActiveTab] = useState<string>("skills");
   const [isSkillsClicked, setIsSkillsClicked] = useState<boolean>(false);
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-  const [mobileInView, setMobileInView] = useState(isMobile);
+  // const [mobileInView, setMobileInView] = useState(isMobile);
 
-  useEffect(() => {
-    if(isMobile) {
-      setMobileInView(true)
-    }
-  },[isMobile])
+  // useEffect(() => {
+  //   if(isMobile) {
+  //     setMobileInView(true)
+  //   }
+  // },[isMobile])
 
 
   const { ref: leftRef, inView: isLeftInView } = useInView({
