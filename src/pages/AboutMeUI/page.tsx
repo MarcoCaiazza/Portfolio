@@ -7,12 +7,12 @@ import Image from "next/image";
 
 
 export default function AboutMeUI() {
-  const [activeTab, setActiveTab] = useState<string>("skills");
-  const [isSkillsClicked, setIsSkillsClicked] = useState<boolean>(false);
+  // const [activeTab, setActiveTab] = useState<string>("skills");
+  // const [isSkillsClicked, setIsSkillsClicked] = useState<boolean>(false);
   // const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
   // const [mobileInView, setMobileInView] = useState(isMobile);
   const [isMobile, setIsMobile] = useState(false);
-  const MotionImage = motion(Image);
+  // const MotionImage = motion(Image);
 
 
 useEffect(() => {
@@ -37,10 +37,10 @@ useEffect(() => {
     threshold: 0.2,
   });
 
-  const { ref: rightRef, inView: isRightInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
+  // const { ref: rightRef, inView: isRightInView } = useInView({
+  //   triggerOnce: true,
+  //   threshold: 0.2,
+  // });
 
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -52,16 +52,16 @@ useEffect(() => {
     alt:string;
   }
 
-  const skills:Skills[] = [
-    { src: "/html5.png", alt: "img-html" },
-    { src: "/css.png", alt: "img-css" },
-    { src: "/bootstrap.png", alt: "img-bootstrap" },
-    { src: "/tailwind.png", alt: "img-tailwind" },
-    { src: "/js.png", alt: "img-js" },
-    { src: "/react.png", alt: "img-react" },
-    { src: "/git.png", alt: "img-git" },
-    { src: "/node.png", alt: "img-node" },
-  ];
+  // const skills:Skills[] = [
+  //   { src: "/html5.png", alt: "img-html" },
+  //   { src: "/css.png", alt: "img-css" },
+  //   { src: "/bootstrap.png", alt: "img-bootstrap" },
+  //   { src: "/tailwind.png", alt: "img-tailwind" },
+  //   { src: "/js.png", alt: "img-js" },
+  //   { src: "/react.png", alt: "img-react" },
+  //   { src: "/git.png", alt: "img-git" },
+  //   { src: "/node.png", alt: "img-node" },
+  // ];
 
   interface Button {
     id:number;
