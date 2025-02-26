@@ -6,13 +6,14 @@ import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 
 
+// const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+// const [mobileInView, setMobileInView] = useState(isMobile);
+
 export default function AboutMeUI() {
-  const [activeTab, setActiveTab] = useState<string>("skills");
-  const [isSkillsClicked, setIsSkillsClicked] = useState<boolean>(false);
-  // const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-  // const [mobileInView, setMobileInView] = useState(isMobile);
+  // const [activeTab, setActiveTab] = useState<string>("skills");
+  // const [isSkillsClicked, setIsSkillsClicked] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState(false);
-  const MotionImage = motion(Image);
+  // const MotionImage = motion(Image);
 
 
 useEffect(() => {
@@ -46,21 +47,21 @@ handleResize();
     threshold: 0.2,
   });
 
-  interface Skills {
-    src:string;
-    alt:string;
-  }
+  // interface Skills {
+  //   src:string;
+  //   alt:string;
+  // }
 
-  const skills:Skills[] = [
-    { src: "/html5.png", alt: "img-html" },
-    { src: "/css.png", alt: "img-css" },
-    { src: "/bootstrap.png", alt: "img-bootstrap" },
-    { src: "/tailwind.png", alt: "img-tailwind" },
-    { src: "/js.png", alt: "img-js" },
-    { src: "/react.png", alt: "img-react" },
-    { src: "/git.png", alt: "img-git" },
-    { src: "/node.png", alt: "img-node" },
-  ];
+  // const skills:Skills[] = [
+  //   { src: "/html5.png", alt: "img-html" },
+  //   { src: "/css.png", alt: "img-css" },
+  //   { src: "/bootstrap.png", alt: "img-bootstrap" },
+  //   { src: "/tailwind.png", alt: "img-tailwind" },
+  //   { src: "/js.png", alt: "img-js" },
+  //   { src: "/react.png", alt: "img-react" },
+  //   { src: "/git.png", alt: "img-git" },
+  //   { src: "/node.png", alt: "img-node" },
+  // ];
 
   interface Button {
     id:number;
@@ -94,17 +95,17 @@ handleResize();
     },
   ];
 
-  const tabChange = (id: number) => {
-    if (id === 1) {
-      setActiveTab("skills");
-      setIsSkillsClicked(true);
-      // setTimeout(() => setIsSkillsClicked(false), 1000);
-    } else if (id === 2) {
-      setActiveTab("certifications");
-    } else if (id === 3) {
-      setActiveTab("experience");
-    }
-  };
+  // const tabChange = (id: number) => {
+  //   if (id === 1) {
+  //     setActiveTab("skills");
+  //     setIsSkillsClicked(true);
+  //     // setTimeout(() => setIsSkillsClicked(false), 1000);
+  //   } else if (id === 2) {
+  //     setActiveTab("certifications");
+  //   } else if (id === 3) {
+  //     setActiveTab("experience");
+  //   }
+  // };
 
 
 
@@ -189,7 +190,7 @@ handleResize();
                 <button
                   key={btn.id}
                   className="bg-[rgb(31,41,55)] text-white flex items-center gap-5 pl-20 md:pl-10 rounded-xl h-[50px] hover:bg-sky-100 hover:text-black focus:bg-sky-100 focus:text-black transition-colors duration-500 hover:scale-105 transition-transform duration-500 relative group border border-transparent hover:border-3 hover:border-gray-300 focus:border-3 focus:border-gray-300 shadow-[10px_0px_20px_0px_rgba(120,120,120,0.6)] hover:shadow-none focus:shadow-none before:absolute before:inset-0 before:rounded-xl before:border-[3px] before:border-transparent before:bg-gradient-to-r before:from-transparent before:to-gray-300 before:opacity-0 group-hover:before:opacity-100 group-focus:before:opacity-100 before:transition-opacity before:duration-500"
-                  onClick={() => tabChange(btn.id)}
+                  // onClick={() => tabChange(btn.id)}
                 >
                   <Image
                     key={btn.id + 10}
