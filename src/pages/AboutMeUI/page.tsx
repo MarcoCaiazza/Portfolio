@@ -214,7 +214,7 @@ useEffect(() => {
               ))}
             </motion.div>
 
-            <motion.div
+            {/* <motion.div
               key={isMobile ? "mobile" : "desktop"}
               ref={rightRef}
               className="gap-10 p-4 overflow-hidden  rounded-3xl shadow-[5px_0px_10px_5px_rgba(150,150,150,0.3)] "
@@ -234,7 +234,6 @@ useEffect(() => {
               }}
             >
 
-              {/* SISTEMARE ANIMAZIONE CHE VIENE DA DESTRA E DA SOTTO IN MANIERA SBAGLIATA */}
               {activeTab === "skills" && (
                 <motion.div
                   className="grid md:grid-cols-4 grid-cols-3 h-full gap-5 md:gap-0"
@@ -421,7 +420,7 @@ useEffect(() => {
                   </div>
                 </div>
               )}
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </div>
