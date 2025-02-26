@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function AboutMeUI() {
   const [activeTab, setActiveTab] = useState<string>("skills");
-  const [isSkillsClicked, setIsSkillsClicked] = useState<boolean>(false);
+  // const [isSkillsClicked, setIsSkillsClicked] = useState<boolean>(false);
   // const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
   // const [mobileInView, setMobileInView] = useState(isMobile);
   const [isMobile, setIsMobile] = useState(false);
@@ -97,7 +97,7 @@ handleResize();
   const tabChange = (id: number) => {
     if (id === 1) {
       setActiveTab("skills");
-      setIsSkillsClicked(true);
+      // setIsSkillsClicked(true);
       // setTimeout(() => setIsSkillsClicked(false), 1000);
     } else if (id === 2) {
       setActiveTab("certifications");
