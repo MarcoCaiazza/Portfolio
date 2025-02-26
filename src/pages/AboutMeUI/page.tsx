@@ -213,10 +213,10 @@ handleResize();
             </motion.div>
 
             <motion.div
-              // key={isMobile ? "mobile" : "desktop"}
+              key={isMobile ? "mobile" : "desktop"}
               ref={rightRef}
               className="gap-10 p-4 overflow-hidden  rounded-3xl shadow-[5px_0px_10px_5px_rgba(150,150,150,0.3)] "
-              initial={isMobile ? { y: 200, opacity: 0 } : { x:200, opacity: 0 }}
+              // initial={isMobile ? { y: 200, opacity: 0 } : { x:200, opacity: 0 }}
               
               
               animate={
@@ -226,10 +226,10 @@ handleResize();
                   ? { y: 200, opacity: 0 }
                   : { x: 200, opacity: 0 }
               }
-              transition={{
-                duration: 0.8,
-                ease: "easeInOut",
-              }}
+              // transition={{
+              //   duration: 0.8,
+              //   ease: "easeInOut",
+              // }}
             >
 
               {activeTab === "skills" && (
