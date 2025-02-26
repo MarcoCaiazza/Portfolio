@@ -268,12 +268,12 @@ handleResize();
               )}
 
               {activeTab === "certifications" && (
-                <motion.div
+                <div
                   key="certifications"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
+                  // initial={{ opacity: 0 }}
+                  // animate={{ opacity: 1 }}
+                  // exit={{ opacity: 0 }}
+                  // transition={{ duration: 0.5 }}
                   className="h-full"
                 >
                   <div className="flex flex-col justify-between mt-auto h-full ">
@@ -347,7 +347,7 @@ handleResize();
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               )}
               {activeTab === "experience" && (
                 <div className="flex flex-col justify-between mt-auto h-full">
