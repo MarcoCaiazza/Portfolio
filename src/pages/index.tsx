@@ -1,5 +1,5 @@
+'use client'
 
-// import { Geist, Geist_Mono } from "next/font/google";
 import HomeUI from "./HomeUI/page";
 import AboutMeUI from "./AboutMeUI/page";
 import ProjectsUI from "./ProjectsUI/page";
