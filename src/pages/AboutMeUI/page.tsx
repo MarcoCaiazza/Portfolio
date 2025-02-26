@@ -7,20 +7,19 @@ import Image from "next/image";
 
 
 export default function AboutMeUI() {
-  // const [activeTab, setActiveTab] = useState<string>("skills");
-  // const [isSkillsClicked, setIsSkillsClicked] = useState<boolean>(false);
+  const [activeTab, setActiveTab] = useState<string>("skills");
+  const [isSkillsClicked, setIsSkillsClicked] = useState<boolean>(false);
   // const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
   // const [mobileInView, setMobileInView] = useState(isMobile);
   const [isMobile, setIsMobile] = useState(false);
-  // const MotionImage = motion(Image);
+  const MotionImage = motion(Image);
 
 
 useEffect(() => {
   const handleResize = () => {
     setIsMobile(window.innerWidth < 768);
   };
-
-  handleResize();
+handleResize();
 
   window.addEventListener("resize", handleResize);
   return () => window.removeEventListener("resize", handleResize);
@@ -37,31 +36,31 @@ useEffect(() => {
     threshold: 0.2,
   });
 
-  // const { ref: rightRef, inView: isRightInView } = useInView({
-  //   triggerOnce: true,
-  //   threshold: 0.2,
-  // });
+  const { ref: rightRef, inView: isRightInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
 
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.2,
   });
 
-  // interface Skills {
-  //   src:string;
-  //   alt:string;
-  // }
+  interface Skills {
+    src:string;
+    alt:string;
+  }
 
-  // const skills:Skills[] = [
-  //   { src: "/html5.png", alt: "img-html" },
-  //   { src: "/css.png", alt: "img-css" },
-  //   { src: "/bootstrap.png", alt: "img-bootstrap" },
-  //   { src: "/tailwind.png", alt: "img-tailwind" },
-  //   { src: "/js.png", alt: "img-js" },
-  //   { src: "/react.png", alt: "img-react" },
-  //   { src: "/git.png", alt: "img-git" },
-  //   { src: "/node.png", alt: "img-node" },
-  // ];
+  const skills:Skills[] = [
+    { src: "/html5.png", alt: "img-html" },
+    { src: "/css.png", alt: "img-css" },
+    { src: "/bootstrap.png", alt: "img-bootstrap" },
+    { src: "/tailwind.png", alt: "img-tailwind" },
+    { src: "/js.png", alt: "img-js" },
+    { src: "/react.png", alt: "img-react" },
+    { src: "/git.png", alt: "img-git" },
+    { src: "/node.png", alt: "img-node" },
+  ];
 
   interface Button {
     id:number;
@@ -95,21 +94,20 @@ useEffect(() => {
     },
   ];
 
-  // const tabChange = (id: number) => {
-  //   if (id === 1) {
-  //     setActiveTab("skills");
-  //     setIsSkillsClicked(true);
-  //     // setTimeout(() => setIsSkillsClicked(false), 1000);
-  //   } else if (id === 2) {
-  //     setActiveTab("certifications");
-  //   } else if (id === 3) {
-  //     setActiveTab("experience");
-  //   }
-  // };
+  const tabChange = (id: number) => {
+    if (id === 1) {
+      setActiveTab("skills");
+      setIsSkillsClicked(true);
+      // setTimeout(() => setIsSkillsClicked(false), 1000);
+    } else if (id === 2) {
+      setActiveTab("certifications");
+    } else if (id === 3) {
+      setActiveTab("experience");
+    }
+  };
 
 
 
-  // <div className="w-[300px] md:w-auto">
 
   return (
     <>
@@ -214,8 +212,8 @@ useEffect(() => {
               ))}
             </motion.div>
 
-            {/* <motion.div
-              key={isMobile ? "mobile" : "desktop"}
+            <motion.div
+              // key={isMobile ? "mobile" : "desktop"}
               ref={rightRef}
               className="gap-10 p-4 overflow-hidden  rounded-3xl shadow-[5px_0px_10px_5px_rgba(150,150,150,0.3)] "
               initial={isMobile ? { y: 200, opacity: 0 } : { x:200, opacity: 0 }}
@@ -420,7 +418,7 @@ useEffect(() => {
                   </div>
                 </div>
               )}
-            </motion.div> */}
+            </motion.div>
           </div>
         </div>
       </div>
