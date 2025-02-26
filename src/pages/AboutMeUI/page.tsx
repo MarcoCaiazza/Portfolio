@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function AboutMeUI() {
   const [activeTab, setActiveTab] = useState<string>("skills");
-  // const [isSkillsClicked, setIsSkillsClicked] = useState<boolean>(false);
+  const [isSkillsClicked, setIsSkillsClicked] = useState<boolean>(false);
   // const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
   // const [mobileInView, setMobileInView] = useState(isMobile);
   const [isMobile, setIsMobile] = useState(false);
@@ -36,10 +36,10 @@ handleResize();
     threshold: 0.2,
   });
 
-  // const { ref: rightRef, inView: isRightInView } = useInView({
-  //   triggerOnce: true,
-  //   threshold: 0.2,
-  // });
+  const { ref: rightRef, inView: isRightInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
 
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -97,7 +97,7 @@ handleResize();
   const tabChange = (id: number) => {
     if (id === 1) {
       setActiveTab("skills");
-      // setIsSkillsClicked(true);
+      setIsSkillsClicked(true);
       // setTimeout(() => setIsSkillsClicked(false), 1000);
     } else if (id === 2) {
       setActiveTab("certifications");
@@ -212,27 +212,27 @@ handleResize();
               ))}
             </motion.div>
 
-            <div
-              // key={isMobile ? "mobile" : "desktop"}
-              // ref={rightRef}
+            <motion.div
+              key={isMobile ? "mobile" : "desktop"}
+              ref={rightRef}
               className="gap-10 p-4 overflow-hidden  rounded-3xl shadow-[5px_0px_10px_5px_rgba(150,150,150,0.3)] "
-              // initial={isMobile ? { y: 200, opacity: 0 } : { x:200, opacity: 0 }}
+              initial={isMobile ? { y: 200, opacity: 0 } : { x:200, opacity: 0 }}
               
               
-              // animate={
-              //   isRightInView
-              //     ? { y: 0, x: 0, opacity: 1 }
-              //     : isMobile
-              //     ? { y: 200, opacity: 0 }
-              //     : { x: 200, opacity: 0 }
-              // }
-              // transition={{
-              //   duration: 0.8,
-              //   ease: "easeInOut",
-              // }}
+              animate={
+                isRightInView
+                  ? { y: 0, x: 0, opacity: 1 }
+                  : isMobile
+                  ? { y: 200, opacity: 0 }
+                  : { x: 200, opacity: 0 }
+              }
+              transition={{
+                duration: 0.8,
+                ease: "easeInOut",
+              }}
             >
 
-              {activeTab === "skills" && (
+              {/* {activeTab === "skills" && (
                 <motion.div
                   className="grid md:grid-cols-4 grid-cols-3 h-full gap-5 md:gap-0"
                   key="skills"
@@ -251,17 +251,17 @@ handleResize();
                       height={64}
                       className="w-14 h-14 m-auto"
                     
-                      // initial={{ scale: 1 }}
-                      // animate={{
-                      //   x: isMobile ? 0 : isRightInView || isSkillsClicked ? 0 : 100,
-                      //   y: isMobile ? (isRightInView || isSkillsClicked ? 0 : 100) : 0,
-                      //   scale: isRightInView  ? [1, 1.3, 1] : 1,
-                      // }}
-                      // transition={{
-                      //   duration: 1,
-                      //   ease: "easeInOut",
-                      //   delay: index * 0.2,
-                      // }}
+                      initial={{ scale: 1 }}
+                      animate={{
+                        x: isMobile ? 0 : isRightInView || isSkillsClicked ? 0 : 100,
+                        y: isMobile ? (isRightInView || isSkillsClicked ? 0 : 100) : 0,
+                        scale: isRightInView  ? [1, 1.3, 1] : 1,
+                      }}
+                      transition={{
+                        duration: 1,
+                        ease: "easeInOut",
+                        delay: index * 0.2,
+                      }}
                     />
                   ))}
                 </motion.div>
@@ -417,8 +417,8 @@ handleResize();
                         </motion.p>
                   </div>
                 </div>
-              )}
-            </div>
+              )} */}
+            </motion.div>
           </div>
         </div>
       </div>
