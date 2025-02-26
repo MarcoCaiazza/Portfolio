@@ -1,3 +1,5 @@
+'use client'
+
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";

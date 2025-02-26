@@ -1,3 +1,6 @@
+'use client'
+
+
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 import { motion } from "framer-motion";

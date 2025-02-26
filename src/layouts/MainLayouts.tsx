@@ -1,3 +1,6 @@
+'use client'
+
+
 import Navbar from '../components/Navbar';
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => (
