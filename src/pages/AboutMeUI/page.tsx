@@ -212,7 +212,7 @@ handleResize();
               ))}
             </motion.div>
 
-            <motion.div
+            <div
               // key={isMobile ? "mobile" : "desktop"}
               // ref={rightRef}
               className="gap-10 p-4 overflow-hidden  rounded-3xl shadow-[5px_0px_10px_5px_rgba(150,150,150,0.3)] "
@@ -418,7 +418,7 @@ handleResize();
                   </div>
                 </div>
               )}
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
