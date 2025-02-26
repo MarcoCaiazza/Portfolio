@@ -36,10 +36,10 @@ handleResize();
     threshold: 0.2,
   });
 
-  const { ref: rightRef, inView: isRightInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
+  // const { ref: rightRef, inView: isRightInView } = useInView({
+  //   triggerOnce: true,
+  //   threshold: 0.2,
+  // });
 
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -251,17 +251,17 @@ handleResize();
                       height={64}
                       className="w-14 h-14 m-auto"
                     
-                      initial={{ scale: 1 }}
-                      animate={{
-                        x: isMobile ? 0 : isRightInView || isSkillsClicked ? 0 : 100,
-                        y: isMobile ? (isRightInView || isSkillsClicked ? 0 : 100) : 0,
-                        scale: isRightInView  ? [1, 1.3, 1] : 1,
-                      }}
-                      transition={{
-                        duration: 1,
-                        ease: "easeInOut",
-                        delay: index * 0.2,
-                      }}
+                      // initial={{ scale: 1 }}
+                      // animate={{
+                      //   x: isMobile ? 0 : isRightInView || isSkillsClicked ? 0 : 100,
+                      //   y: isMobile ? (isRightInView || isSkillsClicked ? 0 : 100) : 0,
+                      //   scale: isRightInView  ? [1, 1.3, 1] : 1,
+                      // }}
+                      // transition={{
+                      //   duration: 1,
+                      //   ease: "easeInOut",
+                      //   delay: index * 0.2,
+                      // }}
                     />
                   ))}
                 </motion.div>
