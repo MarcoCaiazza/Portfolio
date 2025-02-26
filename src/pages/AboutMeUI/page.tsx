@@ -47,10 +47,10 @@ useEffect(() => {
     threshold: 0.2,
   });
 
-  interface Skills {
-    src:string;
-    alt:string;
-  }
+  // interface Skills {
+  //   src:string;
+  //   alt:string;
+  // }
 
   // const skills:Skills[] = [
   //   { src: "/html5.png", alt: "img-html" },
