@@ -62,37 +62,37 @@ handleResize();
     { src: "/node.png", alt: "img-node" },
   ];
 
-  interface Button {
-    id:number;
-    icon:string;
-    iconBlack:string,
-    alt:string,
-    title:string
-  }
+  // interface Button {
+  //   id:number;
+  //   icon:string;
+  //   iconBlack:string,
+  //   alt:string,
+  //   title:string
+  // }
 
-  const buttons:Button[] = [
-    {
-      id: 1,
-      icon: "/skills.png",
-      iconBlack: "/skillsB.png",
-      alt: "img-skills",
-      title: "Tecnologie",
-    },
-    {
-      id: 2,
-      icon: "/certifications.png",
-      iconBlack: "/certificationsB.png",
-      alt: "img-certifications",
-      title: "Certificazione",
-    },
-    {
-      id: 3,
-      icon: "/experience.png",
-      iconBlack: "/experienceB.png",
-      alt: "img-experience",
-      title: "Professione",
-    },
-  ];
+  // const buttons:Button[] = [
+  //   {
+  //     id: 1,
+  //     icon: "/skills.png",
+  //     iconBlack: "/skillsB.png",
+  //     alt: "img-skills",
+  //     title: "Tecnologie",
+  //   },
+  //   {
+  //     id: 2,
+  //     icon: "/certifications.png",
+  //     iconBlack: "/certificationsB.png",
+  //     alt: "img-certifications",
+  //     title: "Certificazione",
+  //   },
+  //   {
+  //     id: 3,
+  //     icon: "/experience.png",
+  //     iconBlack: "/experienceB.png",
+  //     alt: "img-experience",
+  //     title: "Professione",
+  //   },
+  // ];
 
   // const tabChange = (id: number) => {
   //   if (id === 1) {
