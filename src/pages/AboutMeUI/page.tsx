@@ -245,7 +245,14 @@ export default function AboutMeUI() {
                   // exit={{ opacity: 0 }}
                   // transition={{ duration: 0.5 }}
                 >
-                  {skills.map((skill, index) => (
+                  <Image 
+                  src="/js.png"
+                  alt="js-image"
+                  width={64}
+                  height={64}
+                  className="w-14 h-14 m-auto"
+                    />
+                  {/* {skills.map((skill, index) => (
                     
                     <Image
                       key={index}
@@ -255,19 +262,19 @@ export default function AboutMeUI() {
                       height={64}
                       className="w-14 h-14 m-auto"
                     
-                      // initial={{ scale: 1 }}
-                      // animate={{
-                      //   x: isMobile ? 0 : isRightInView || isSkillsClicked ? 0 : 100,
-                      //   y: isMobile ? (isRightInView || isSkillsClicked ? 0 : 100) : 0,
-                      //   scale: isRightInView  ? [1, 1.3, 1] : 1,
-                      // }}
-                      // transition={{
-                      //   duration: 1,
-                      //   ease: "easeInOut",
-                      //   delay: index * 0.2,
-                      // }}
+                      initial={{ scale: 1 }}
+                      animate={{
+                        x: isMobile ? 0 : isRightInView || isSkillsClicked ? 0 : 100,
+                        y: isMobile ? (isRightInView || isSkillsClicked ? 0 : 100) : 0,
+                        scale: isRightInView  ? [1, 1.3, 1] : 1,
+                      }}
+                      transition={{
+                        duration: 1,
+                        ease: "easeInOut",
+                        delay: index * 0.2,
+                      }}
                     />
-                  ))}
+                  ))} */}
                 </div>
               )}
               {activeTab === "certifications" && (
