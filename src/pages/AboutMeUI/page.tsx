@@ -167,18 +167,12 @@ handleResize();
             </div>
           </div>
 
-          <div className="flex flex-col justify-evenly max-w-screen-lg mt-20 md:flex-row ">
+          <div className="flex flex-col justify-evenly max-w-screen-lg mt-20 md:flex-row bg-red-600">
             <motion.div
               ref={leftRef}
-              className="flex flex-col gap-5 order-first md:order-none justify-between md:w-1/4 w-full"
+              className="flex flex-col gap-5 order-first md:order-none justify-between md:w-1/4 w-full bg-purple-200"
               initial={{ opacity: 0, transform: 'translateX(-200px)' }} // Modifica qui per il movimento
-          animate={isLeftInView ? { opacity: 1, transform: 'translateX(0)' } : { opacity: 0, transform: 'translateX(-200px)' }}
-              // initial={{ x: -200, opacity: 0 }}
-              // animate={{
-              //   x: isLeftInView ? 0 : -200,
-              //   opacity: isLeftInView ? 1 : 0,
-              // }}
-              // animate={isLeftInView ? { x: 0, opacity: 1 } : { x: -200, opacity: 0 }}
+              animate={isLeftInView ? { opacity: 1, transform: 'translateX(0)' } : { opacity: 0, transform: 'translateX(-200px)' }}
               style={{ visibility: isLeftInView ? "visible" : "hidden" }}
               transition={{
                 duration: 0.8,
@@ -215,7 +209,7 @@ handleResize();
             <div
               // key={isMobile ? "mobile" : "desktop"}
               // ref={rightRef}
-              className="gap-10 p-4 overflow-hidden  rounded-3xl shadow-[5px_0px_10px_5px_rgba(150,150,150,0.3)] "
+              className="gap-10 p-4 overflow-hidden  rounded-3xl shadow-[5px_0px_10px_5px_rgba(150,150,150,0.3)] bg-blue-400"
               // initial={isMobile ? { y: 200, opacity: 0 } : { x:200, opacity: 0 }}
               
               
