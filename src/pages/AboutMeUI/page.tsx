@@ -12,23 +12,23 @@ import Image from "next/image";
 export default function AboutMeUI() {
   const [activeTab, setActiveTab] = useState<string>("");
   // const [isSkillsClicked, setIsSkillsClicked] = useState<boolean>(false);
-  const [isMobile, setIsMobile] = useState(false);
+  // const [isMobile, setIsMobile] = useState(false);
   const MotionImage = motion(Image);
 
-useEffect(() => {
-  const handleResize = () => {
-    setIsMobile(window.innerWidth < 768);
-  };
-handleResize();
+// useEffect(() => {
+//   const handleResize = () => {
+//     setIsMobile(window.innerWidth < 768);
+//   };
+// handleResize();
 
-  window.addEventListener("resize", handleResize);
-  return () => window.removeEventListener("resize", handleResize);
-}, []);
+//   window.addEventListener("resize", handleResize);
+//   return () => window.removeEventListener("resize", handleResize);
+// }, []);
 
 
-  useEffect(() => {
-    console.log("isMobile aggiornato:", isMobile);
-  }, [isMobile]);
+//   useEffect(() => {
+//     console.log("isMobile aggiornato:", isMobile);
+//   }, [isMobile]);
   
 
   const { ref: leftRef, inView: isLeftInView } = useInView({
