@@ -278,7 +278,7 @@ export default function AboutMeUI() {
                   ))} */}
                 </div>
               )}
-              {activeTab === "certifications" && (
+              {/* {activeTab === "certifications" && (
                 <div
                   // key="certifications"
                   // initial={{ opacity: 0 }}
@@ -359,7 +359,7 @@ export default function AboutMeUI() {
                     </div>
                   </div>
                 </div>
-              )}
+              )} */}
               {/* {activeTab === "experience" && (
                 <div className="flex flex-col justify-between mt-auto h-full">
                   <div className="flex justify-center pt-5">
