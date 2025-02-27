@@ -47,21 +47,21 @@ export default function AboutMeUI() {
     threshold: 0.2,
   });
 
-  interface Skills {
-    src:string;
-    alt:string;
-  }
+  // interface Skills {
+  //   src:string;
+  //   alt:string;
+  // }
 
-  const skills:Skills[] = [
-    { src: "/html5.png", alt: "img-html" },
-    { src: "/css.png", alt: "img-css" },
-    { src: "/bootstrap.png", alt: "img-bootstrap" },
-    { src: "/tailwind.png", alt: "img-tailwind" },
-    { src: "/js.png", alt: "img-js" },
-    { src: "/react.png", alt: "img-react" },
-    { src: "/git.png", alt: "img-git" },
-    { src: "/node.png", alt: "img-node" },
-  ];
+  // const skills:Skills[] = [
+  //   { src: "/html5.png", alt: "img-html" },
+  //   { src: "/css.png", alt: "img-css" },
+  //   { src: "/bootstrap.png", alt: "img-bootstrap" },
+  //   { src: "/tailwind.png", alt: "img-tailwind" },
+  //   { src: "/js.png", alt: "img-js" },
+  //   { src: "/react.png", alt: "img-react" },
+  //   { src: "/git.png", alt: "img-git" },
+  //   { src: "/node.png", alt: "img-node" },
+  // ];
 
   // interface Button {
   //   id:number;
