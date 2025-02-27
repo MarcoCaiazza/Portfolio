@@ -237,7 +237,7 @@ handleResize();
             >
               {activeTab === "skills" && (
                 <div
-                  className="grid md:grid-cols-4 grid-cols-3 h-full gap-5 md:gap-0"
+                  className=""
                   // key="skills"
                   // initial={{ opacity: 0 }}
                   // animate={{ opacity: 1 }}
