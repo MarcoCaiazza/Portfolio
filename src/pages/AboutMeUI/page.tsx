@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect,useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
@@ -29,9 +29,7 @@ export default function AboutMeUI() {
 //   useEffect(() => {
 //     console.log("isMobile aggiornato:", isMobile);
 //   }, [isMobile]);
-useEffect(() => {
-  console.log("ActiveTab:", activeTab);
-}, [activeTab]);
+
 
 
   const { ref: leftRef, inView: isLeftInView } = useInView({
@@ -249,7 +247,7 @@ useEffect(() => {
                 >
                   {skills.map((skill, index) => (
                     
-                    <MotionImage
+                    <Image
                       key={index}
                       src={skill.src}
                       alt={skill.alt}
