@@ -269,7 +269,6 @@ handleResize();
                   ))}
                 </div>
               )}
-
               {activeTab === "certifications" && (
                 <div
                   // key="certifications"
