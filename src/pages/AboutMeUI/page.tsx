@@ -13,7 +13,7 @@ export default function AboutMeUI() {
   const [activeTab, setActiveTab] = useState<string>("");
   // const [isSkillsClicked, setIsSkillsClicked] = useState<boolean>(false);
   // const [isMobile, setIsMobile] = useState(false);
-  // const MotionImage = motion(Image);
+  const MotionImage = motion(Image);
 
 // useEffect(() => {
 //   const handleResize = () => {
@@ -63,53 +63,53 @@ export default function AboutMeUI() {
     { src: "/node.png", alt: "img-node" },
   ];
 
-  // interface Button {
-  //   id:number;
-  //   icon:string;
-  //   iconBlack:string,
-  //   alt:string,
-  //   title:string
-  // }
-
-  // const buttons:Button[] = [
-  //   {
-  //     id: 1,
-  //     icon: "/skills.png",
-  //     iconBlack: "/skillsB.png",
-  //     alt: "img-skills",
-  //     title: "Tecnologie",
-  //   },
-  //   {
-  //     id: 2,
-  //     icon: "/certifications.png",
-  //     iconBlack: "/certificationsB.png",
-  //     alt: "img-certifications",
-  //     title: "Certificazione",
-  //   },
-  //   {
-  //     id: 3,
-  //     icon: "/experience.png",
-  //     iconBlack: "/experienceB.png",
-  //     alt: "img-experience",
-  //     title: "Professione",
-  //   },
-  // ];
-
-  // const tabChange = (id: number) => {
-  //   if (id === 1) {
-  //     setActiveTab("skills");
-  //     // setIsSkillsClicked(true);
-  //     // setTimeout(() => setIsSkillsClicked(false), 1000);
-  //   } else if (id === 2) {
-  //     setActiveTab("certifications");
-  //   } else if (id === 3) {
-  //     setActiveTab("experience");
-  //   }
-  // };
-
-  const tabChange = (tab: string): void => {
-    setActiveTab(tab)
+  interface Button {
+    id:number;
+    icon:string;
+    iconBlack:string,
+    alt:string,
+    title:string
   }
+
+  const buttons:Button[] = [
+    {
+      id: 1,
+      icon: "/skills.png",
+      iconBlack: "/skillsB.png",
+      alt: "img-skills",
+      title: "Tecnologie",
+    },
+    {
+      id: 2,
+      icon: "/certifications.png",
+      iconBlack: "/certificationsB.png",
+      alt: "img-certifications",
+      title: "Certificazione",
+    },
+    {
+      id: 3,
+      icon: "/experience.png",
+      iconBlack: "/experienceB.png",
+      alt: "img-experience",
+      title: "Professione",
+    },
+  ];
+
+  const tabChange = (id: number) => {
+    if (id === 1) {
+      setActiveTab("skills");
+      // setIsSkillsClicked(true);
+      // setTimeout(() => setIsSkillsClicked(false), 1000);
+    } else if (id === 2) {
+      setActiveTab("certifications");
+    } else if (id === 3) {
+      setActiveTab("experience");
+    }
+  };
+
+  // const tabChange = (tab: string): void => {
+  //   setActiveTab(tab)
+  // }
 
 
 
@@ -183,14 +183,14 @@ export default function AboutMeUI() {
                 ease: "easeInOut",
               }}
             >
-              <button className="bg-[rgb(31,41,55)] text-white flex items-center gap-5 pl-20 md:pl-10 rounded-xl h-[50px] hover:bg-sky-100 hover:text-black focus:bg-sky-100 focus:text-black transition-colors duration-500 hover:scale-105 transition-transform duration-500 relative group border border-transparent hover:border-3 hover:border-gray-300 focus:border-3 focus:border-gray-300 shadow-[10px_0px_20px_0px_rgba(120,120,120,0.6)] hover:shadow-none focus:shadow-none before:absolute before:inset-0 before:rounded-xl before:border-[3px] before:border-transparent before:bg-gradient-to-r before:from-transparent before:to-gray-300 before:opacity-0 group-hover:before:opacity-100 group-focus:before:opacity-100 before:transition-opacity before:duration-500" onClick={() => tabChange("skills")}>
+              {/* <button className="bg-[rgb(31,41,55)] text-white flex items-center gap-5 pl-20 md:pl-10 rounded-xl h-[50px] hover:bg-sky-100 hover:text-black focus:bg-sky-100 focus:text-black transition-colors duration-500 hover:scale-105 transition-transform duration-500 relative group border border-transparent hover:border-3 hover:border-gray-300 focus:border-3 focus:border-gray-300 shadow-[10px_0px_20px_0px_rgba(120,120,120,0.6)] hover:shadow-none focus:shadow-none before:absolute before:inset-0 before:rounded-xl before:border-[3px] before:border-transparent before:bg-gradient-to-r before:from-transparent before:to-gray-300 before:opacity-0 group-hover:before:opacity-100 group-focus:before:opacity-100 before:transition-opacity before:duration-500" onClick={() => tabChange("skills")}>
                         Tecnologie
               </button>
 
               <button className="bg-[rgb(31,41,55)] text-white flex items-center gap-5 pl-20 md:pl-10 rounded-xl h-[50px] hover:bg-sky-100 hover:text-black focus:bg-sky-100 focus:text-black transition-colors duration-500 hover:scale-105 transition-transform duration-500 relative group border border-transparent hover:border-3 hover:border-gray-300 focus:border-3 focus:border-gray-300 shadow-[10px_0px_20px_0px_rgba(120,120,120,0.6)] hover:shadow-none focus:shadow-none before:absolute before:inset-0 before:rounded-xl before:border-[3px] before:border-transparent before:bg-gradient-to-r before:from-transparent before:to-gray-300 before:opacity-0 group-hover:before:opacity-100 group-focus:before:opacity-100 before:transition-opacity before:duration-500" onClick={() => tabChange("certifications")}>
                         Certificazione
-              </button>
-              {/* {buttons.map((btn) => (
+              </button> */}
+              {buttons.map((btn) => (
                 <button
                   key={btn.id}
                   className="bg-[rgb(31,41,55)] text-white flex items-center gap-5 pl-20 md:pl-10 rounded-xl h-[50px] hover:bg-sky-100 hover:text-black focus:bg-sky-100 focus:text-black transition-colors duration-500 hover:scale-105 transition-transform duration-500 relative group border border-transparent hover:border-3 hover:border-gray-300 focus:border-3 focus:border-gray-300 shadow-[10px_0px_20px_0px_rgba(120,120,120,0.6)] hover:shadow-none focus:shadow-none before:absolute before:inset-0 before:rounded-xl before:border-[3px] before:border-transparent before:bg-gradient-to-r before:from-transparent before:to-gray-300 before:opacity-0 group-hover:before:opacity-100 group-focus:before:opacity-100 before:transition-opacity before:duration-500"
@@ -214,7 +214,7 @@ export default function AboutMeUI() {
                   />
                   <p>{btn.title}</p>
                 </button>
-              ))} */}
+              ))}
             </motion.div>
 
             <div
@@ -237,17 +237,17 @@ export default function AboutMeUI() {
               // }}
             >
               {activeTab === "skills" && (
-                <div
-                  className=""
-                  // key="skills"
-                  // initial={{ opacity: 0 }}
-                  // animate={{ opacity: 1 }}
-                  // exit={{ opacity: 0 }}
-                  // transition={{ duration: 0.5 }}
+                <motion.div
+                  className="grid md:grid-cols-4 grid-cols-3 h-full gap-5 md:gap-0"
+                  key="skills"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
                 >
                   {skills.map((skill, index) => (
                     
-                    <Image
+                    <MotionImage
                       key={index}
                       src={skill.src}
                       alt={skill.alt}
@@ -268,7 +268,7 @@ export default function AboutMeUI() {
                       // }}
                     />
                   ))}
-                </div>
+                </motion.div>
               )}
               {activeTab === "certifications" && (
                 <div
