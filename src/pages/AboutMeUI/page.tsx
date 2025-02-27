@@ -183,7 +183,7 @@ handleResize();
                 <button
                   key={btn.id}
                   className="bg-[rgb(31,41,55)] text-white flex items-center gap-5 pl-20 md:pl-10 rounded-xl h-[50px] hover:bg-sky-100 hover:text-black focus:bg-sky-100 focus:text-black transition-colors duration-500 hover:scale-105 transition-transform duration-500 relative group border border-transparent hover:border-3 hover:border-gray-300 focus:border-3 focus:border-gray-300 shadow-[10px_0px_20px_0px_rgba(120,120,120,0.6)] hover:shadow-none focus:shadow-none before:absolute before:inset-0 before:rounded-xl before:border-[3px] before:border-transparent before:bg-gradient-to-r before:from-transparent before:to-gray-300 before:opacity-0 group-hover:before:opacity-100 group-focus:before:opacity-100 before:transition-opacity before:duration-500"
-                  onClick={() => tabChange(btn.id)}
+                  // onClick={() => tabChange(btn.id)}
                 >
                   <Image
                     key={btn.id + 10}
