@@ -245,13 +245,14 @@ export default function AboutMeUI() {
                   // exit={{ opacity: 0 }}
                   // transition={{ duration: 0.5 }}
                 >
-                  <Image 
+                  <h1>TEST</h1>
+                  {/* <Image 
                   src="/js.png"
                   alt="js-image"
                   width={64}
                   height={64}
                   className="w-14 h-14 m-auto"
-                    />
+                    /> */}
                   {/* {skills.map((skill, index) => (
                     
                     <Image
