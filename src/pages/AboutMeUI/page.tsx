@@ -13,7 +13,7 @@ export default function AboutMeUI() {
   const [activeTab, setActiveTab] = useState<string>("");
   // const [isSkillsClicked, setIsSkillsClicked] = useState<boolean>(false);
   // const [isMobile, setIsMobile] = useState(false);
-  const MotionImage = motion(Image);
+  // const MotionImage = motion(Image);
 
 // useEffect(() => {
 //   const handleResize = () => {
