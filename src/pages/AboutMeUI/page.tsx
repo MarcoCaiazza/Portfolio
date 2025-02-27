@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-// import Image from "next/image";
+import Image from "next/image";
 
 
 // const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
@@ -47,21 +47,21 @@ export default function AboutMeUI() {
     threshold: 0.2,
   });
 
-  // interface Skills {
-  //   src:string;
-  //   alt:string;
-  // }
+  interface Skills {
+    src:string;
+    alt:string;
+  }
 
-  // const skills:Skills[] = [
-  //   { src: "/html5.png", alt: "img-html" },
-  //   { src: "/css.png", alt: "img-css" },
-  //   { src: "/bootstrap.png", alt: "img-bootstrap" },
-  //   { src: "/tailwind.png", alt: "img-tailwind" },
-  //   { src: "/js.png", alt: "img-js" },
-  //   { src: "/react.png", alt: "img-react" },
-  //   { src: "/git.png", alt: "img-git" },
-  //   { src: "/node.png", alt: "img-node" },
-  // ];
+  const skills:Skills[] = [
+    { src: "/html5.png", alt: "img-html" },
+    { src: "/css.png", alt: "img-css" },
+    { src: "/bootstrap.png", alt: "img-bootstrap" },
+    { src: "/tailwind.png", alt: "img-tailwind" },
+    { src: "/js.png", alt: "img-js" },
+    { src: "/react.png", alt: "img-react" },
+    { src: "/git.png", alt: "img-git" },
+    { src: "/node.png", alt: "img-node" },
+  ];
 
   // interface Button {
   //   id:number;
@@ -245,15 +245,7 @@ export default function AboutMeUI() {
                   // exit={{ opacity: 0 }}
                   // transition={{ duration: 0.5 }}
                 >
-                  <h1>TEST</h1>
-                  {/* <Image 
-                  src="/js.png"
-                  alt="js-image"
-                  width={64}
-                  height={64}
-                  className="w-14 h-14 m-auto"
-                    /> */}
-                  {/* {skills.map((skill, index) => (
+                  {skills.map((skill, index) => (
                     
                     <Image
                       key={index}
@@ -263,22 +255,22 @@ export default function AboutMeUI() {
                       height={64}
                       className="w-14 h-14 m-auto"
                     
-                      initial={{ scale: 1 }}
-                      animate={{
-                        x: isMobile ? 0 : isRightInView || isSkillsClicked ? 0 : 100,
-                        y: isMobile ? (isRightInView || isSkillsClicked ? 0 : 100) : 0,
-                        scale: isRightInView  ? [1, 1.3, 1] : 1,
-                      }}
-                      transition={{
-                        duration: 1,
-                        ease: "easeInOut",
-                        delay: index * 0.2,
-                      }}
+                      // initial={{ scale: 1 }}
+                      // animate={{
+                      //   x: isMobile ? 0 : isRightInView || isSkillsClicked ? 0 : 100,
+                      //   y: isMobile ? (isRightInView || isSkillsClicked ? 0 : 100) : 0,
+                      //   scale: isRightInView  ? [1, 1.3, 1] : 1,
+                      // }}
+                      // transition={{
+                      //   duration: 1,
+                      //   ease: "easeInOut",
+                      //   delay: index * 0.2,
+                      // }}
                     />
-                  ))} */}
+                  ))}
                 </div>
               )}
-              {/* {activeTab === "certifications" && (
+              {activeTab === "certifications" && (
                 <div
                   // key="certifications"
                   // initial={{ opacity: 0 }}
@@ -359,7 +351,7 @@ export default function AboutMeUI() {
                     </div>
                   </div>
                 </div>
-              )} */}
+              )}
               {/* {activeTab === "experience" && (
                 <div className="flex flex-col justify-between mt-auto h-full">
                   <div className="flex justify-center pt-5">
