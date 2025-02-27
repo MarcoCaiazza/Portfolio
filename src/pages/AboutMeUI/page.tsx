@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react";
+import { useEffect,useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
@@ -12,18 +12,18 @@ import Image from "next/image";
 export default function AboutMeUI() {
   const [activeTab, setActiveTab] = useState<string>("");
   // const [isSkillsClicked, setIsSkillsClicked] = useState<boolean>(false);
-  // const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const MotionImage = motion(Image);
 
-// useEffect(() => {
-//   const handleResize = () => {
-//     setIsMobile(window.innerWidth < 768);
-//   };
-// handleResize();
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
+handleResize();
 
-//   window.addEventListener("resize", handleResize);
-//   return () => window.removeEventListener("resize", handleResize);
-// }, []);
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
 
 
 //   useEffect(() => {
@@ -37,10 +37,10 @@ export default function AboutMeUI() {
     threshold: 0.2,
   });
 
-  // const { ref: rightRef, inView: isRightInView } = useInView({
-  //   triggerOnce: true,
-  //   threshold: 0.2,
-  // });
+  const { ref: rightRef, inView: isRightInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
 
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -217,24 +217,23 @@ export default function AboutMeUI() {
               ))}
             </motion.div>
 
-            <div
-              // key={isMobile ? "mobile" : "desktop"}
-              // ref={rightRef}
+            <motion.div
+              key={isMobile ? "mobile" : "desktop"}
+              ref={rightRef}
               className="gap-10 p-4 overflow-hidden rounded-3xl shadow-[5px_0px_10px_5px_rgba(150,150,150,0.3)] bg-orange-200"
-              // initial={isMobile ? { y: 200, opacity: 0 } : { x:200, opacity: 0 }}
+              initial={isMobile ? { y: 200, opacity: 0 } : { x:200, opacity: 0 }}
               
-              
-              // animate={
-              //   isRightInView
-              //     ? { y: 0, x: 0, opacity: 1 }
-              //     : isMobile
-              //     ? { y: 200, opacity: 0 }
-              //     : { x: 200, opacity: 0 }
-              // }
-              // transition={{
-              //   duration: 0.8,
-              //   ease: "easeInOut",
-              // }}
+              animate={
+                isRightInView
+                  ? { y: 0, x: 0, opacity: 1 }
+                  : isMobile
+                  ? { y: 200, opacity: 0 }
+                  : { x: 200, opacity: 0 }
+              }
+              transition={{
+                duration: 0.8,
+                ease: "easeInOut",
+              }}
             >
               {activeTab === "skills" && (
                 <motion.div
@@ -421,7 +420,7 @@ export default function AboutMeUI() {
                   </div>
                 </div>
               )} */}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
