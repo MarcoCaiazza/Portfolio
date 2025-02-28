@@ -3,7 +3,7 @@
 
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Toaster, toast } from "sonner";
 import Image from "next/image";
@@ -56,36 +56,36 @@ export default function ContactsUI() {
       <div className="flex flex-col items-center pt-14">
         {/* titolo */}
         <div className="flex flex-col items-center justify-center">
-          <motion.h1
+          <h1
             className="text-5xl"
-            ref={ref}
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: inView ? 1 : 0,
-              transition: {
-                opacity: { duration: 0.5 },
-                staggerChildren: 0.05,
-              },
-            }}
+            // ref={ref}
+            // initial={{ opacity: 0 }}
+            // animate={{
+            //   opacity: inView ? 1 : 0,
+            //   transition: {
+            //     opacity: { duration: 0.5 },
+            //     staggerChildren: 0.05,
+            //   },
+            // }}
           >
             {[..."Contatti"].map((char, index) => (
-              <motion.span
+              <span
                 key={index}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{
-                  opacity: inView ? 1 : 0, 
-                  x: inView ? 0 : 20, 
-                  transition: {
-                    delay: index * 0.1,
-                    type: "spring",
-                    stiffness: 50,
-                  },
-                }}
+                // initial={{ opacity: 0, x: 20 }}
+                // animate={{
+                //   opacity: inView ? 1 : 0, 
+                //   x: inView ? 0 : 20, 
+                //   transition: {
+                //     delay: index * 0.1,
+                //     type: "spring",
+                //     stiffness: 50,
+                //   },
+                // }}
               >
                 {char}
-              </motion.span>
+              </span>
             ))}
-          </motion.h1>
+          </h1>
 
           <p className="text-sm md:text-base text-center md:text-justify p-3">
             Sentiti libero di contattarmi inviando il modulo sottostante e ti

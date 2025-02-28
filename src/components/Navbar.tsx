@@ -2,7 +2,7 @@
 
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+// import { } from "framer-;
 import Image from "next/image";
 
 
@@ -32,17 +32,17 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.nav
+      <nav
         className="bg-gray-800 sticky top-0 z-50 shadow-2xl h-[80px]"
-        initial={{ y: -200, opacity: 0 }}
-        animate={{
-          y: 0,
-          opacity: 100,
-        }}
-        transition={{
-          duration: 1.2,
-          ease: "easeInOut",
-        }}
+        // initial={{ y: -200, opacity: 0 }}
+        // animate={{
+        //   y: 0,
+        //   opacity: 100,
+        // }}
+        // transition={{
+        //   duration: 1.2,
+        //   ease: "easeInOut",
+        // }}
       >
         <div className="max-w-screen-lg mx-auto flex items-center justify-between pr-1 pt-2 ">
           {/* <!-- Logo a sinistra --> */}
@@ -144,7 +144,7 @@ export default function Navbar() {
             </a>
           </div>
         </div>
-      </motion.nav>
+      </nav>
     </>
   );
 }

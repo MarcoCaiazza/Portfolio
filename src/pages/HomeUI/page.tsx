@@ -2,7 +2,7 @@
 
 
 import styles from "./homeUI.module.css";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 
@@ -22,37 +22,37 @@ export default function HomeUI() {
     >
       <div className="max-w-screen-lg flex flex-col items-center md:flex-row">
         <section className="flex flex-col w-full md:w-1/2 md:text-left text-center order-last md:order-first pb-5 md:pb-0 items-center md:items-start">
-          <motion.div
+          <div
             className="text-white font-bold text-6xl md:text-7xl pb-2"
             // style={{ fontSize: "80px" }}
             ref={ref}
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: inView ? 1 : 0,
-              transition: {
-                opacity: { duration: 0.5 },
-                staggerChildren: 0.05,
-              },
-            }}
+            // initial={{ opacity: 0 }}
+            // animate={{
+            //   opacity: inView ? 1 : 0,
+            //   transition: {
+            //     opacity: { duration: 0.5 },
+            //     staggerChildren: 0.05,
+            //   },
+            // }}
           >
             {[..."Benvenuti"].map((char, index) => (
-              <motion.span
+              <span
                 key={index}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{
-                  opacity: inView ? 1 : 0,
-                  x: inView ? 0 : 20,
-                  transition: {
-                    delay: index * 0.1,
-                    type: "spring",
-                    stiffness: 50,
-                  },
-                }}
+                // initial={{ opacity: 0, x: 20 }}
+                // animate={{
+                //   opacity: inView ? 1 : 0,
+                //   x: inView ? 0 : 20,
+                //   transition: {
+                //     delay: index * 0.1,
+                //     type: "spring",
+                //     stiffness: 50,
+                //   },
+                // }}
               >
                 {char}
-              </motion.span>
+              </span>
             ))}
-          </motion.div>
+          </div>
 
           <div className="w-[300px] md:w-auto">
             <p className="text-white md:text-left pl-1 text-sm md:text-base ">

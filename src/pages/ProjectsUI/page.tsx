@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, AnimatePresence } from "framer-motion";
+// import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
@@ -91,46 +91,46 @@ export default function ProjectsUI() {
         <div className="text-transparent " id="projects">i miei progetti</div>
         <div className="max-w-screen-lg border-b border-gray-900/20 pt-14 pb-20 w-[90%] md:w-auto">
           <div className="flex flex-col items-center justify-center max-w-screen-lg ">
-            <motion.h1
+            <h1
               className="md:text-5xl text-4xl font-medium md:font-normal"
               ref={ref}
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: inView ? 1 : 0,
-                transition: {
-                  opacity: { duration: 0.5 },
-                  staggerChildren: 0.05,
-                },
-              }}
+              // initial={{ opacity: 0 }}
+              // animate={{
+              //   opacity: inView ? 1 : 0,
+              //   transition: {
+              //     opacity: { duration: 0.5 },
+              //     staggerChildren: 0.05,
+              //   },
+              // }}
             >
               {[..."I miei progetti"].map((char, index) => (
-                <motion.span
+                <span
                   key={index}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{
-                    opacity: inView ? 1 : 0,
-                    x: inView ? 0 : 20,
-                    transition: {
-                      delay: index * 0.1,
-                      type: "spring",
-                      stiffness: 50,
-                    },
-                  }}
+                  // initial={{ opacity: 0, x: 20 }}
+                  // animate={{
+                  //   opacity: inView ? 1 : 0,
+                  //   x: inView ? 0 : 20,
+                  //   transition: {
+                  //     delay: index * 0.1,
+                  //     type: "spring",
+                  //     stiffness: 50,
+                  //   },
+                  // }}
                 >
                   {char}
-                </motion.span>
+                </span>
               ))}
-            </motion.h1>
+            </h1>
             <p className="pt-3 text-sm md:text-base">Una raccolta di progetti su cui ho lavorato.</p>
           </div>
 
-          {/* <motion.div className="sm:grid sm:grid-cols-3 mt-0 sm:mt-16 gap-10 bg-red-600 " */}
+          {/* <div className="sm:grid sm:grid-cols-3 mt-0 sm:mt-16 gap-10 bg-red-600 " */}
 
-          <motion.div className="flex flex-col md:grid md:grid-cols-3 md:mt-16 p-9 md:p-0 gap-20 md:gap-10"
+          <div className="flex flex-col md:grid md:grid-cols-3 md:mt-16 p-9 md:p-0 gap-20 md:gap-10"
 
           >
             {projects.map((project:Project) => (
-              <motion.div
+              <div
                 key={project.id}
                 className="p-2 rounded-2xl flex flex-col shadow-[0px_0px_40px_rgba(200,200,200,1)] mt-5 sm:mt-0 hover:scale-105 transition-transform duration-300 items-center "
               >
@@ -178,30 +178,30 @@ export default function ProjectsUI() {
                     />
                   </a>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
           {/* sopra */}
         </div>
 
-        <AnimatePresence>
+        {/* <AnimatePresence> */}
           {imageClickedId > 0 && (
             // div gradnde chiaro
-            <motion.div
+            <div
               className="fixed inset-0 z-50 flex items-center justify-center bg-gray-700 bg-opacity-70 "
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              // initial={{ opacity: 0 }}
+              // animate={{ opacity: 1 }}
+              // exit={{ opacity: 0 }}
+              // transition={{ duration: 0.3 }}
               onClick={closeImage}
             >
               {/* div piccolo contenente img */}
-              <motion.div
+              <div
                 className="relative flex flex-col justify-center items-center max-w-screen-sm border-2 rounded-lg p-2 bg-white"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.8, opacity: 0 }}
-                transition={{ duration: 0.3 }}
+                // initial={{ scale: 0.8, opacity: 0 }}
+                // animate={{ scale: 1, opacity: 1 }}
+                // exit={{ scale: 0.8, opacity: 0 }}
+                // transition={{ duration: 0.3 }}
               >
                 <div>
                   <Image
@@ -229,10 +229,10 @@ export default function ProjectsUI() {
                     {projects.find((p) => p.id === imageClickedId)?.description}@
                   </p> */}
                 </div>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           )}
-        </AnimatePresence>
+        {/* </AnimatePresence> */}
       </div>
     </>
   );
