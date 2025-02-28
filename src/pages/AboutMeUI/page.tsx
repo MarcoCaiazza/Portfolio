@@ -351,7 +351,7 @@ handleResize();
                   </div>
                 </div>
               )}
-              {/* {activeTab === "experience" && (
+              {activeTab === "experience" && (
                 <div className="flex flex-col justify-between mt-auto h-full">
                   <div className="flex justify-center pt-5">
                     <Image
@@ -419,7 +419,7 @@ handleResize();
                         </motion.p>
                   </div>
                 </div>
-              )} */}
+              )}
             </motion.div>
           </div>
         </div>
