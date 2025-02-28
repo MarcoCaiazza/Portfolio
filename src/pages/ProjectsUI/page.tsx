@@ -2,7 +2,7 @@
 
 // import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { useInView } from "react-intersection-observer";
+// import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 
 
@@ -80,10 +80,10 @@ export default function ProjectsUI() {
   const selectedProject = projects.find((p) => p.id === imageClickedId);
 
 
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
+  // const { ref, inView } = useInView({
+  //   triggerOnce: true,
+  //   threshold: 0.2,
+  // });
 
   return (
     <>
@@ -93,7 +93,7 @@ export default function ProjectsUI() {
           <div className="flex flex-col items-center justify-center max-w-screen-lg ">
             <h1
               className="md:text-5xl text-4xl font-medium md:font-normal"
-              ref={ref}
+              // ref={ref}
               // initial={{ opacity: 0 }}
               // animate={{
               //   opacity: inView ? 1 : 0,

@@ -2,7 +2,7 @@
 
 import { useEffect,useState } from "react";
 // import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+// import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 
 
@@ -32,20 +32,20 @@ handleResize();
 
 
 
-  const { ref: leftRef, inView: isLeftInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
+  // const { ref: leftRef, inView: isLeftInView } = useInView({
+  //   triggerOnce: true,
+  //   threshold: 0.2,
+  // });
 
-  const { ref: rightRef, inView: isRightInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
+  // const { ref: rightRef, inView: isRightInView } = useInView({
+  //   triggerOnce: true,
+  //   threshold: 0.2,
+  // });
 
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
+  // const { ref, inView } = useInView({
+  //   triggerOnce: true,
+  //   threshold: 0.2,
+  // });
 
   interface Skills {
     src:string;
@@ -173,7 +173,7 @@ handleResize();
 
           <div className="flex flex-col justify-evenly max-w-screen-lg mt-20 md:flex-row bg-red-600">
             <div
-              ref={leftRef}
+              // ref={leftRef}
               className="flex flex-col gap-5 order-first md:order-none justify-between md:w-1/4 w-full bg-purple-200"
               // initial={{ opacity: 0, transform: 'translateX(-200px)' }} // Modifica qui per il movimento
               // animate={isLeftInView ? { opacity: 1, transform: 'translateX(0)' } : { opacity: 0, transform: 'translateX(-200px)' }}
@@ -219,7 +219,7 @@ handleResize();
 
             <div
               key={isMobile ? "mobile" : "desktop"}
-              ref={rightRef}
+              // ref={rightRef}
               className="gap-10 p-4 overflow-hidden rounded-3xl shadow-[5px_0px_10px_5px_rgba(150,150,150,0.3)] bg-orange-200"
               // initial={isMobile ? { y: 200, opacity: 0 } : { x:200, opacity: 0 }}
               

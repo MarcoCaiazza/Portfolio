@@ -4,16 +4,16 @@
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 // import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+// import { useInView } from "react-intersection-observer";
 import { Toaster, toast } from "sonner";
 import Image from "next/image";
 
 
 export default function ContactsUI() {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
+  // const { ref, inView } = useInView({
+  //   triggerOnce: true,
+  //   threshold: 0.2,
+  // });
 
   const form = useRef<HTMLFormElement>(null);
 

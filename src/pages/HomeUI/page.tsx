@@ -3,15 +3,15 @@
 
 import styles from "./homeUI.module.css";
 // import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+// import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 
 
 export default function HomeUI() {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
+  // const { ref, inView } = useInView({
+  //   triggerOnce: true,
+  //   threshold: 0.2,
+  // });
 
   // FLICKERING DA RIVEDERE
 
@@ -25,7 +25,7 @@ export default function HomeUI() {
           <div
             className="text-white font-bold text-6xl md:text-7xl pb-2"
             // style={{ fontSize: "80px" }}
-            ref={ref}
+            // ref={ref}
             // initial={{ opacity: 0 }}
             // animate={{
             //   opacity: inView ? 1 : 0,
